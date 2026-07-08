@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Proposta — Isabela Cantizano | VMB Advogados</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:  #0b0e2e;
+    --green: #77c698;
+    --green2:#a3d9bc;
+    --white: #ffffff;
+    --text:  rgba(255,255,255,0.90);
+    --dim:   rgba(255,255,255,0.55);
+    --red:   #f07878;
+    --r-bg:  rgba(240,100,100,0.10);
+    --r-bd:  rgba(240,100,100,0.42);
+    --g-bg:  rgba(119,198,152,0.10);
+    --g-bd:  rgba(119,198,152,0.38);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--navy);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+  }
+
+  /* ─── PAGE SHELL ─── */
+  .page {
+    background: var(--navy);
+    background-image:
+      linear-gradient(rgba(119,198,152,0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(119,198,152,0.018) 1px, transparent 1px);
+    background-size: 90px 90px;
+    min-height: 100vh;
+  }
+
+  .content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ─── SECTION BASE ─── */
+  .section {
+    padding: 68px 48px;
+    position: relative;
+  }
+
+  .t-line {
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, #77c698 35%, #a3d9bc 65%, transparent);
+    opacity: 0.7;
+  }
+
+  .corn {
+    position: absolute;
+    width: 60px; height: 60px;
+    border-color: #77c698; border-style: solid; opacity: 0.18;
+  }
+  .c-tl { top: 24px; left: 24px; border-width: 2px 0 0 2px; }
+  .c-br { bottom: 24px; right: 24px; border-width: 0 2px 2px 0; }
+
+  .sep {
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(119,198,152,0.22), transparent);
+    margin: 0 48px;
+  }
+
+  /* ─── TYPE ─── */
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(30px, 5.5vw, 52px);
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(22px, 4vw, 36px);
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: clamp(17px, 2.5vw, 22px);
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  p {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  p:last-child { margin-bottom: 0; }
+
+  .italic-green {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--green);
+  }
+  .green-hl { color: var(--green); font-weight: 500; }
+
+  /* ─── ATOMS ─── */
+  .tag {
+    display: inline-block;
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--green);
+    border: 1px solid rgba(119,198,152,0.35);
+    padding: 5px 14px; border-radius: 4px;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .qbox {
+    background: rgba(119,198,152,0.055);
+    border-left: 3px solid rgba(119,198,152,0.48);
+    padding: 20px 26px;
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+  }
+  .qbox p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: rgba(255,255,255,0.82);
+  }
+
+  .wbox {
+    background: var(--r-bg);
+    border: 1px solid var(--r-bd);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .wbox-label {
+    font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--red); font-weight: 600; margin-bottom: 10px;
+  }
+  .wbox p { color: rgba(255,255,255,0.78); font-size: 14px; }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 88px 48px 72px;
+    position: relative;
+  }
+  .hero-sub {
+    font-size: 16.5px;
+    color: var(--dim);
+    margin-top: 18px;
+    max-width: 620px;
+    line-height: 1.7;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 36px;
+    flex-wrap: wrap;
+  }
+  .hero-meta-item {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .hero-meta-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: rgba(119,198,152,0.4);
+  }
+
+  /* ─── EXEC CARDS ─── */
+  .exec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .exec-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(119,198,152,0.14);
+    border-radius: 10px;
+    padding: 26px;
+  }
+  .exec-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px; font-weight: 900;
+    color: rgba(119,198,152,0.18);
+    line-height: 1; margin-bottom: 10px;
+  }
+  .exec-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .exec-desc { font-size: 15px; color: var(--white); line-height: 1.65; }
+
+  /* ─── ACTION HEADER ─── */
+  .action-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+  .action-num {
+    width: 56px; height: 56px; min-width: 56px;
+    border-radius: 50%;
+    background: rgba(119,198,152,0.08);
+    border: 2px solid rgba(119,198,152,0.45);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--green);
+  }
+  .action-tag {
+    font-size: 10px; letter-spacing: 2px; color: var(--dim);
+    text-transform: uppercase; font-weight: 500; margin-bottom: 5px;
+  }
+  .action-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3vw, 26px); font-weight: 700;
+    color: var(--white);
+  }
+
+  /* ─── SCOPE ITEMS ─── */
+  .scope-item {
+    border-left: 3px solid rgba(119,198,152,0.38);
+    padding: 16px 22px;
+    margin: 14px 0;
+    background: rgba(255,255,255,0.02);
+    border-radius: 0 8px 8px 0;
+  }
+  .scope-item-title {
+    font-size: 11px; font-weight: 600;
+    color: var(--green);
+    text-transform: uppercase; letter-spacing: 1.5px;
+    margin-bottom: 7px;
+  }
+  .scope-item p { font-size: 13.5px; color: var(--text); margin: 0; }
+
+  /* ─── TIMELINE ─── */
+  .timeline { margin-top: 36px; position: relative; padding-left: 4px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px; top: 8px; bottom: 8px; width: 2px;
+    background: linear-gradient(to bottom, #77c698 60%, rgba(119,198,152,0.08));
+    border-radius: 2px;
+  }
+  .tl-item {
+    display: flex; gap: 26px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-num {
+    width: 42px; height: 42px; min-width: 42px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 2px solid #77c698;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; font-size: 15px;
+    color: var(--green);
+    position: relative; z-index: 1;
+    box-shadow: 0 0 0 4px var(--navy);
+  }
+  .tl-content { padding-top: 7px; flex: 1; }
+  .tl-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; font-size: 16px;
+    color: var(--white); margin-bottom: 6px;
+  }
+  .tl-desc { font-size: 13.5px; color: var(--text); line-height: 1.7; margin: 0; }
+
+  /* ─── HONORÁRIOS CARDS ─── */
+  .honor-cards { display: flex; flex-direction: column; gap: 20px; margin-top: 28px; }
+  .honor-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(119,198,152,0.18);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .honor-card-header {
+    padding: 18px 22px;
+    border-bottom: 1px solid rgba(119,198,152,0.14);
+    background: rgba(119,198,152,0.05);
+  }
+  .honor-card-tag {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--green); font-weight: 600; margin-bottom: 4px;
+  }
+  .honor-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px; font-weight: 700;
+    color: var(--white);
+  }
+  .honor-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .honor-cell {
+    padding: 20px 22px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .honor-cell:last-child { border-right: none; }
+  .honor-cell-label {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--green); font-weight: 600; margin-bottom: 10px;
+  }
+  .honor-cell-val {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; font-size: 20px;
+    color: var(--white); line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .honor-cell-sub { font-size: 12.5px; color: var(--text); line-height: 1.55; }
+
+  /* ─── CONDIÇÕES ─── */
+  .cond-list { list-style: none; margin-top: 20px; }
+  .cond-list li {
+    font-size: 14px; color: var(--text);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; gap: 14px; align-items: flex-start;
+    line-height: 1.65;
+  }
+  .cond-list li:last-child { border-bottom: none; }
+  .cond-list li::before {
+    content: '—';
+    color: var(--green); font-weight: 600;
+    flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* ─── SIGNATURE ─── */
+  .sig-wrap {
+    display: flex; align-items: center; gap: 32px;
+    padding: 52px 48px;
+    position: relative;
+  }
+  .sig-photo {
+    width: 92px; height: 92px; min-width: 92px;
+    border-radius: 50%;
+    border: 2.5px solid var(--green);
+    background: rgba(119,198,152,0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px; font-weight: 900;
+    color: var(--green);
+  }
+  .sig-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px; font-weight: 700;
+    color: var(--white); margin-bottom: 8px;
+  }
+  .sig-role {
+    font-size: 12.5px; color: var(--text);
+    line-height: 1.7; margin-bottom: 12px;
+  }
+  .sig-tagline {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-size: 13.5px;
+    color: var(--green);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    text-align: center;
+    padding: 28px 48px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer p { font-size: 11px; color: rgba(255,255,255,0.22); letter-spacing: 1px; margin: 0; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    .content-wrapper { padding: 0; }
+    .section { padding: 48px 22px; }
+    .hero { padding: 56px 22px 48px; }
+    .sep { margin: 0 22px; }
+    .corn { display: none; }
+    .exec-grid { grid-template-columns: 1fr; }
+    .sig-wrap { flex-direction: column; align-items: flex-start; padding: 48px 22px; }
+    .footer { padding: 24px 22px; }
+    h1 { font-size: clamp(26px, 7vw, 38px); }
+    h2 { font-size: clamp(20px, 6vw, 30px); }
+    .honor-card-body { grid-template-columns: 1fr; }
+    .honor-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .honor-cell:last-child { border-bottom: none; }
+  }
+  @media (max-width: 400px) {
+    .tl-item { gap: 16px; }
+  }
+</style>
+
+<style>
+#lock-overlay{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:#0b0e2e;
+  background-image:linear-gradient(rgba(119,198,152,0.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(119,198,152,0.018) 1px,transparent 1px);
+  background-size:90px 90px;
+  z-index:9999;display:flex;align-items:center;justify-content:center;
+  font-family:'DM Sans',sans-serif;
+}
+#lock-box{
+  text-align:center;padding:48px 40px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(119,198,152,0.25);
+  border-radius:12px;max-width:360px;width:90%;position:relative;
+}
+.lock-line{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#77c698 35%,#a3d9bc 65%,transparent);
+  opacity:0.7;border-radius:12px 12px 0 0;
+}
+#lock-input{
+  width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);
+  border:1px solid rgba(119,198,152,0.3);border-radius:8px;
+  color:#ffffff;font-size:22px;letter-spacing:8px;text-align:center;
+  outline:none;margin-bottom:12px;
+}
+#lock-input:focus{border-color:#77c698;}
+#lock-btn{
+  width:100%;padding:13px;background:rgba(119,198,152,0.12);
+  border:1px solid rgba(119,198,152,0.4);border-radius:8px;
+  color:#77c698;font-size:13px;letter-spacing:2px;text-transform:uppercase;
+  font-weight:500;cursor:pointer;
+}
+#lock-error{font-size:12px;color:#f07878;margin-top:10px;opacity:0;transition:opacity 0.3s;min-height:18px;}
+#lock-error.show{opacity:1;}
+</style>
+
+<div id="lock-overlay">
+  <div id="lock-box">
+    <div class="lock-line"></div>
+    <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#77c698;
+      border:1px solid rgba(119,198,152,0.35);padding:5px 14px;border-radius:4px;
+      margin-bottom:24px;display:inline-block;">Villela, Machado &amp; Brasiel</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:22px;color:#fff;margin-bottom:8px;">
+      Documento confidencial</h2>
+    <p style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:28px;">
+      Acesso restrito. Insira o código para visualizar o conteúdo.</p>
+    <input type="password" id="lock-input" placeholder="código de acesso" maxlength="8" autocomplete="off">
+    <button id="lock-btn" onclick="checkPass()">Acessar</button>
+    <div id="lock-error">Código incorreto. Tente novamente.</div>
+  </div>
+</div>
+<script>
+function checkPass(){
+  var val=document.getElementById('lock-input').value;
+  var err=document.getElementById('lock-error');
+  if(val==='0807'){
+    document.getElementById('lock-overlay').style.display='none';
+  } else {
+    err.classList.add('show');
+    document.getElementById('lock-input').value='';
+    document.getElementById('lock-input').focus();
+    setTimeout(function(){err.classList.remove('show');},2500);
+  }
+}
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('lock-input').addEventListener('keydown',function(e){
+    if(e.key==='Enter') checkPass();
+  });
+});
+</script>
+
+</head>
+<body>
+<div class="page">
+<div class="content-wrapper">
+
+  <!-- ════════════════════════════ HERO ════════════════════════════ -->
+  <section class="hero">
+    <div class="t-line"></div>
+    <div class="corn c-tl"></div>
+    <div class="corn c-br"></div>
+
+    <div class="tag">Villela, Machado &amp; Brasiel — Direito de Família</div>
+
+    <h1>Proposta de Serviços Jurídicos</h1>
+
+    <p class="hero-sub">
+      Elaborada especialmente para <strong style="color:#fff;">Isabela Cantizano</strong>, com foco na proteção dos seus direitos parentais e na recuperação do patrimônio constituído ao longo do casamento.
+    </p>
+
+    <div class="hero-meta">
+      <span class="hero-meta-item">Julho de 2026</span>
+      <span class="hero-meta-dot"></span>
+      <span class="hero-meta-item">Confidencial</span>
+      <span class="hero-meta-dot"></span>
+      <span class="hero-meta-item">VMB Advogados</span>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- ════════════════════════════ CONTEXTO ════════════════════════════ -->
+  <section class="section">
+    <div class="t-line"></div>
+    <div class="tag">Contexto &amp; Objetivos</div>
+
+    <p>Ambas as frentes serão conduzidas com estratégia integrada, comunicação direta e escolha permanente pelos meios mais eficazes disponíveis — judiciais ou extrajudiciais.</p>
+
+    <div class="exec-grid">
+      <div class="exec-card">
+        <div class="exec-num">01</div>
+        <div class="exec-title">Visitas, Guarda e Pensão</div>
+        <div class="exec-desc">Recomposição do regime de visitação em favor da mãe, limitação do poder paternal e fixação de pensão alimentícia de 30% dos rendimentos do pai.</div>
+      </div>
+      <div class="exec-card">
+        <div class="exec-num">02</div>
+        <div class="exec-title">Retomada do Patrimônio</div>
+        <div class="exec-desc">Pressão jurídica coordenada — extrajudicial e judicial — para forçar a entrega de documentos e assegurar a partilha do patrimônio constituído durante o casamento.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- ════════════════════════════ LINHA 1 ════════════════════════════ -->
+  <section class="section">
+    <div class="t-line"></div>
+
+    <div class="action-header">
+      <div class="action-num">1</div>
+      <div>
+        <div class="action-tag">Linha de Trabalho 01</div>
+        <div class="action-title">Alteração de Visitas, Guarda e Pensão</div>
+      </div>
+    </div>
+
+    <p><strong style="color:var(--white);">Finalidade:</strong> Recompor o regime de visitação a favor da mãe, estabelecer limites ao exercício do poder paternal e fixar pensão alimentícia no percentual de <span class="green-hl">30% dos rendimentos brutos do genitor</span>, nos termos dos artigos 1.694 e seguintes do Código Civil e da Lei n.º 5.478/1968.</p>
+
+    <div class="scope-item">
+      <div class="scope-item-title">Recomposição do Regime de Visitas</div>
+      <p>Revisão das condições de visitação vigentes para restabelecer o contato regular, qualificado e equânime entre Isabela e os filhos, com fixação de critérios claros de periodicidade, local e transição de guarda.</p>
+    </div>
+
+    <div class="scope-item">
+      <div class="scope-item-title">Limitação do Poder Paternal</div>
+      <p>Identificação de condutas do genitor que comprometam o exercício saudável da maternidade, com requerimento de medidas judiciais que delimitem prerrogativas paternas e protejam a dinâmica familiar.</p>
+    </div>
+
+    <div class="scope-item">
+      <div class="scope-item-title">Fixação de Pensão Alimentícia</div>
+      <p>Ação de alimentos para fixação de prestação mensal equivalente a <span class="green-hl">30% dos rendimentos brutos do genitor</span>, com pedido liminar para antecipação do pagamento durante o curso do processo.</p>
+    </div>
+
+    <!-- TIMELINE -->
+    <h3 style="margin-top:44px;">Linha do Tempo</h3>
+    <p style="font-size:13.5px;color:var(--text);margin-bottom:4px;">Atos previstos ao longo do processo — em ordem sequencial.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-num">1</div>
+        <div class="tl-content">
+          <div class="tl-title">Reunião Inicial</div>
+          <p class="tl-desc">Levantamento completo dos fatos, documentos disponíveis e histórico das relações familiares. Alinhamento de estratégia, objetivos e expectativas. Definição dos pedidos liminares e dos fundamentos centrais da ação.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">2</div>
+        <div class="tl-content">
+          <div class="tl-title">Propositura da Ação</div>
+          <p class="tl-desc">Elaboração e ajuizamento da petição inicial perante o juízo competente, com todos os pedidos relativos à modificação do regime de visitas, limitação da autoridade parental e fixação de alimentos em 30% dos rendimentos do genitor.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">3</div>
+        <div class="tl-content">
+          <div class="tl-title">Pedido Liminar</div>
+          <p class="tl-desc">Requerimento de tutela de urgência para implementação imediata do novo regime de visitas e pagamento provisório de alimentos durante a tramitação do processo — antes da sentença definitiva.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">4</div>
+        <div class="tl-content">
+          <div class="tl-title">Audiências</div>
+          <p class="tl-desc">Acompanhamento das audiências de mediação, conciliação e instrução. Produção de provas, coleta de depoimentos e sustentação dos interesses de Isabela em cada fase processual.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-num">5</div>
+        <div class="tl-content">
+          <div class="tl-title">Julgamento</div>
+          <p class="tl-desc">Sentença com definição do regime definitivo de visitas, eventual revisão da guarda, fixação da pensão alimentícia e demais medidas requeridas. Acompanhamento de recursos e do cumprimento das decisões.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- ════════════════════════════ LINHA 2 ════════════════════════════ -->
+  <section class="section">
+    <div class="t-line"></div>
+
+    <div class="action-header">
+      <div class="action-num">2</div>
+      <div>
+        <div class="action-tag">Linha de Trabalho 02</div>
+        <div class="action-title">Retomada do Patrimônio Comum</div>
+      </div>
+    </div>
+
+    <p><strong style="color:var(--white);">Finalidade:</strong> Pressionar o ex-cônjuge a entregar documentos que corroboram o direito de Isabela ao recebimento de valores e à partilha dos bens comuns, por meio de <span class="green-hl">ações coordenadas judiciais e extrajudiciais</span>.</p>
+
+    <div class="scope-item">
+      <div class="scope-item-title">Notificações Extrajudiciais</div>
+      <p>Notificações formais ao ex-cônjuge exigindo a entrega de documentos, prestação de contas e apresentação de informações patrimoniais. Constituem o primeiro instrumento de pressão — com força probatória para eventual uso judicial.</p>
+    </div>
+
+    <div class="scope-item">
+      <div class="scope-item-title">Ações Cautelares para Obtenção de Documentos</div>
+      <p>Quando a via extrajudicial não for suficiente, propositura de medidas cautelares de exibição de documentos, perícia contábil ou produção antecipada de provas para acesso forçado às informações patrimoniais retidas.</p>
+    </div>
+
+    <div class="scope-item">
+      <div class="scope-item-title">Busca e Localização de Bens</div>
+      <p>Levantamento patrimonial por meio dos canais disponíveis — SISBAJUD, RENAJUD, registros imobiliários, Receita Federal — para mapeamento completo dos ativos sujeitos à partilha ou cobrança.</p>
+    </div>
+
+    <div class="scope-item">
+      <div class="scope-item-title">Ações de Cobrança e Partilha</div>
+      <p>Propositura de ações judiciais de cobrança dos valores devidos e de partilha dos bens identificados, com pedidos de arresto, penhora e demais medidas de garantia e satisfação do crédito de Isabela.</p>
+    </div>
+
+    <div class="wbox">
+      <div class="wbox-label">⚑ Atenção — Urgência na Preservação do Patrimônio</div>
+      <p>A demora na adoção de medidas pode resultar em dissipação, ocultação ou alienação de bens comuns. Recomenda-se iniciar as notificações extrajudiciais e as medidas cautelares com a maior brevidade, a fim de preservar o acervo patrimonial sujeito à partilha.</p>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- ════════════════════════════ HONORÁRIOS ════════════════════════════ -->
+  <section class="section">
+    <div class="t-line"></div>
+    <div class="tag">Proposta de Honorários</div>
+
+    <h2>Investimento e Condições</h2>
+
+    <p>Os honorários estão estruturados em <strong style="color:var(--white);">pró-labore fixo</strong> — exigível independentemente do resultado — acrescido de <strong style="color:var(--white);">honorários de êxito</strong>, calculados sobre o benefício concreto obtido para Isabela ao final de cada linha de atuação.</p>
+
+    <div class="honor-cards">
+
+      <!-- LINHA 01 -->
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-card-tag">Linha de Trabalho 01</div>
+          <div class="honor-card-title">Visitas, Guarda e Pensão Alimentícia</div>
+        </div>
+        <div class="honor-card-body">
+          <div class="honor-cell">
+            <div class="honor-cell-label">Pró-labore Fixo</div>
+            <div class="honor-cell-val">R$ 12.500</div>
+            <div class="honor-cell-sub">Forma e prazo a combinar</div>
+          </div>
+          <div class="honor-cell">
+            <div class="honor-cell-label">Honorários de Êxito</div>
+            <div class="honor-cell-val">2 pensões mensais</div>
+            <div class="honor-cell-sub">Calculadas sobre o valor de alimentos fixado ao final do acordo ou da sentença</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LINHA 02 -->
+      <div class="honor-card">
+        <div class="honor-card-header">
+          <div class="honor-card-tag">Linha de Trabalho 02</div>
+          <div class="honor-card-title">Retomada do Patrimônio Constituído</div>
+        </div>
+        <div class="honor-card-body">
+          <div class="honor-cell">
+            <div class="honor-cell-label">Pró-labore Fixo</div>
+            <div class="honor-cell-val">R$ 7.500</div>
+            <div class="honor-cell-sub">Forma e prazo a combinar</div>
+          </div>
+          <div class="honor-cell">
+            <div class="honor-cell-label">Honorários de Êxito</div>
+            <div class="honor-cell-val">15%</div>
+            <div class="honor-cell-sub">Sobre o patrimônio, crédito ou valor efetivamente recuperado</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 style="margin-top:36px;margin-bottom:4px;">Condições Gerais</h3>
+
+    <ul class="cond-list">
+      <li>O pró-labore de cada linha é devido independentemente do resultado obtido na respectiva ação ou negociação, incluindo eventual insucesso.</li>
+      <li>Custas judiciais, emolumentos cartoriais e despesas processuais correm por conta da cliente, mediante adiantamento ou reembolso com prestação de contas periódica.</li>
+      <li>A formalização do mandato dependerá da assinatura de contrato de honorários e instrumento de procuração específico para cada linha de trabalho.</li>
+    </ul>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- ════════════════════════════ ASSINATURA ════════════════════════════ -->
+  <section class="section" style="padding-top:52px;padding-bottom:60px;">
+    <div class="t-line"></div>
+    <div class="corn c-tl"></div>
+    <div class="corn c-br"></div>
+
+    <div class="sig-wrap" style="padding:0;">
+      <img class="sig-photo" src="https://vmbadvogados.com/wp-content/uploads/2023/01/JOAO-2-Site--1063x1536.jpg" alt="João Roberto Machado" style="object-fit:cover;object-position:top;">
+      <div>
+        <div class="tag" style="margin-bottom:16px;">Villela, Machado &amp; Brasiel — Direito de Família</div>
+        <div class="sig-name">João Roberto Machado</div>
+        <div class="sig-role">
+          Advogado — OAB/DF 50.673<br>
+          Mestre em Direito pelo Instituto Brasiliense de Direito Público (IDP).<br>
+          machado@vmbadvogados.com.br
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ FOOTER ════════════════════════════ -->
+  <div class="footer">
+    <p>Villela, Machado &amp; Brasiel — Advogados &nbsp;·&nbsp; Documento confidencial &nbsp;·&nbsp; Julho de 2026</p>
+  </div>
+
+</div><!-- /.content-wrapper -->
+</div><!-- /.page -->
+</body>
+</html>
